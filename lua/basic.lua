@@ -87,6 +87,7 @@ vim.o.splitright = true
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
 -- 样式
+vim.o.background = "light"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
