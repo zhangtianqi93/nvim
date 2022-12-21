@@ -22,12 +22,33 @@ packer.startup({
         -- telescope extensions
         use({ "LinArcX/telescope-env.nvim" })
 
+        use({
+            "windwp/nvim-autopairs",
+            config = function()
+                require("nvim-autopairs").setup({})
+            end,
+        })
+
+        -- 光标移动
+        use({
+            "phaazon/hop.nvim",
+            branch = "v2",
+            cmd = "Hop*",
+            config = function()
+                require("hop").setup({})
+            end,
+        })
+
+        use({
+            "fatih/vim-go"
+        })
+
         -- 主题
-        use({ "folke/tokyonight.nvim" })
-        use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
         use({ "ful1e5/onedark.nvim" })
         use({ "shaunsingh/nord.nvim" })
+        use({ "folke/tokyonight.nvim" })
         use({ "EdenEast/nightfox.nvim" })
+        use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
 
     end,
 

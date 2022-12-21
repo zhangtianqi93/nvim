@@ -14,6 +14,8 @@ require("plugin-config.telescope")
 
 require("plugin-config.project")
 
+require("plugin-config.nvim-treesitter")
+
 require("colors")
 
 require("cmd").config()

@@ -23,6 +23,10 @@ map("n", "<a-h>", "<c-w>h", opt)
 map("n", "<a-l>", "<c-w>l", opt)
 map("n", "<a-k>", "<c-w>k", opt)
 map("n", "<a-j>", "<c-w>j", opt)
+map("n", "<c-h>", "<c-w>h", opt)
+map("n", "<c-j>", "<c-w>j", opt)
+map("n", "<c-k>", "<c-w>k", opt)
+map("n", "<c-l>", "<c-w>l", opt)
 
 -- 等比例
 map("n", "s=", "<c-w>=", opt)
@@ -55,12 +59,12 @@ map("n", "Q", ":qa!<cr>", opt)
 map("i", "<c-h>", "<esc>I", opt)
 map("i", "<c-l>", "<esc>A", opt)
 
-map("i", "jj", "<esc>", opt)
-map("i", "jk", "<esc>", opt)
-
 -- 跳转到行首/行尾巴
 map("n", "H", "^", opt)
 map("n", "L", "$", opt)
+map("n", "U", "<c-r>", opt)
+map("i", "jj", "<esc>", opt)
+map("i", "jk", "<esc>", opt)
 
 -- magic search
 map("n", "/", "/\\v", { noremap = true, silent = false })
@@ -74,6 +78,8 @@ map("n","<c-n>", ":NvimTreeToggle<cr>", opt)
 -- 左右切换 Tab
 map("n", "<c-h>", ":BufferLineCyclePrev<cr>", opt)
 map("n", "<c-l>", ":BufferLineCycleNext<cr>", opt)
+map("n", "tp", ":BufferLineCyclePrev<cr>", opt)
+map("n", "tn", ":BufferLineCycleNext<cr>", opt)
 
 -- 关闭
 --"moll/vim-bbye"
@@ -87,6 +93,11 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+
+-- hop.nvim
+map("", ";", "<cmd>HopChar1<cr>", opt)
+map("", ",", "<cmd>HopLineStartMW<cr>", opt)
+
 
 local M = {}
 

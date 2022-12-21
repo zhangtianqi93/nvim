@@ -17,7 +17,7 @@ vim.wo.cursorline = true
 vim.wo.signcolumn = "yes"
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
-vim.wo.colorcolumn = "80"
+-- vim.wo.colorcolumn = "80"
 
 -- 缩进 4 个空格等于一个 Tab
 vim.o.tabstop = 4
@@ -96,7 +96,8 @@ vim.opt.termguicolors = true
 vim.o.list = true
 
 -- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.listchars = "space:·"
+-- vim.o.listchars = "space:·"
+vim.opt.listchars = "tab:→ ,eol:↵,trail:·,space:·,extends:↷,precedes:↶"
 
 -- 补全增强
 vim.o.wildmenu = true
@@ -115,3 +116,39 @@ vim.o.showmode = false
 
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+
+-- make vim prompt me to save before doing destructive things
+vim.opt.confirm = true
+
+vim.opt.fillchars = {
+    fold = " ",
+    eob = " ", -- suppress ~ at EndOfBuffer
+    diff = "╱", -- alternatives = ⣿ ░ ─
+    msgsep = "‾",
+    foldopen = "▾",
+    foldsep = "│",
+    foldclose = "▸",
+    horiz = "━",
+    horizup = "┻",
+    horizdown = "┳",
+    vert = "┃",
+    vertleft = "┫",
+    vertright = "┣",
+    verthoriz = "╋",
+}
+
+vim.opt.shortmess = {
+    t = true, -- truncate file messages at start
+    A = true, -- ignore annoying swap file messages
+    o = true, -- file-read message overwrites previous
+    O = true, -- file-read message overwrites previous
+    T = true, -- truncate non-file messages in middle
+    f = true, -- (file x of x) instead of just (x of x
+    F = true, -- Don't give file info when editing a file, NOTE: this breaks autocommand messages
+    s = true,
+    c = true,
+    W = true, -- Don't show [w] or written when writing
+}
+
+-- vim 光标
+vim.opt.guicursor = "n:block-blinkon10,i-ci:ver15-blinkon10,c:hor15-blinkon10,v-sm:block,ve:ver15,r-cr-o:hor10"
