@@ -55,6 +55,9 @@ map("n", "Q", ":qa!<cr>", opt)
 map("i", "<c-h>", "<esc>I", opt)
 map("i", "<c-l>", "<esc>A", opt)
 
+map("i", "jj", "<esc>", opt)
+map("i", "jk", "<esc>", opt)
+
 -- 跳转到行首/行尾巴
 map("n", "H", "^", opt)
 map("n", "L", "$", opt)
@@ -62,3 +65,71 @@ map("n", "L", "$", opt)
 -- magic search
 map("n", "/", "/\\v", { noremap = true, silent = false })
 map("v", "/", "/\\v", { noremap = true, silent = false })
+
+-- nvim-tree
+map("n","<a-m>", ":NvimTreeToggle<cr>", opt)
+map("n","<c-n>", ":NvimTreeToggle<cr>", opt)
+
+-- bufferline
+-- 左右切换 Tab
+map("n", "<c-h>", ":BufferLineCyclePrev<cr>", opt)
+map("n", "<c-l>", ":BufferLineCycleNext<cr>", opt)
+
+-- 关闭
+--"moll/vim-bbye"
+map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
+-- Telescope
+-- 查找文件
+map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+-- 全局搜索
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+
+local M = {}
+
+M.nvimTreeList = {
+    -- 分屏打开文件
+    { key = "v", action = "vsplit" },
+    { key = "h", action = "split" },
+    -- 打开文件或者文件夹
+    { key = { "<cr>", "o", "<2-LeftMouse>"}, action = "edit" },
+    -- 显示隐藏文件
+    { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom
+    { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+    -- 文件操作
+    { key = "<F5>", action = "refresh" },
+    { key = "a", action = "create" },
+    { key = "d", action = "remove" },
+    { key = "r", action = "rename" },
+    { key = "x", action = "cut" },
+    { key = "c", action = "copy" },
+    { key = "p", action = "paste" },
+    { key = "s", action = "system_open" },
+}
+
+-- Telescope 列表中 插入模式快捷键
+M.telescopeList = {
+    i = {
+        -- 上下移动
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+        ["<Down>"] = "move_selection_next",
+        ["<Up>"] = "move_selection_previous",
+
+        -- 历史记录
+        ["<C-n>"] = "cycle_history_next",
+        ["<C-p>"] = "cycle_history_prev",
+
+        -- 关闭窗口
+        ["<C-c>"] = "close",
+
+        -- 预览窗口上下滚动
+        ["<C-u>"] = "preview_scrolling_up",
+        ["<C-d>"] = "preview_scrolling_down",
+    },
+}
+
+return M
