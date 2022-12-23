@@ -19,6 +19,7 @@ map("n", "sc", "<c-w>c", opt)
 map("n", "so", "<c-w>o", opt)
 
 -- 窗口之间跳转
+map("n", "<tab>", "<c-w><c-w>", opt)
 map("n", "<a-h>", "<c-w>h", opt)
 map("n", "<a-l>", "<c-w>l", opt)
 map("n", "<a-k>", "<c-w>k", opt)

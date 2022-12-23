@@ -22,7 +22,7 @@ m.config = function()
     map("n", "so", "<c-w>o", opt)
 
     -- 窗口之间跳转
-    -- map("n", "<tab>", "<c-w><c-w>", opt)
+    map("n", "<tab>", "<c-w><c-w>", opt)
     map("n", "<c-h>", "<c-w>h", opt)
     map("n", "<c-j>", "<c-w>j", opt)
     map("n", "<c-k>", "<c-w>k", opt)

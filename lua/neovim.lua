@@ -1,6 +1,6 @@
-local m = {}
+local M = {}
 
-m.config = function()
+M.config = function()
     -- UTF8
     vim.g.encoding = "UTF-8"
     vim.opt.fileencoding = "UTF-8"
@@ -151,4 +151,4 @@ m.config = function()
     vim.opt.guicursor = "n:block-blinkon10,i-ci:ver15-blinkon10,c:hor15-blinkon10,v-sm:block,ve:ver15,r-cr-o:hor10"
 end
 
-return m
+return M
