@@ -46,7 +46,6 @@ M.config = function()
             augroup END
         ]]
     )
-
 end
 
 return M
